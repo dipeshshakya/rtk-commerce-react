@@ -21,6 +21,14 @@ export const deleteProduct = createAsyncThunk(
     return { id };
   }
 );
+
+export const singleProduct = createAsyncThunk(
+  'products/single',
+  async ({ id }) => {
+    await productServices.get(id);
+    return { id };
+  }
+);
 export const productSlice = createSlice({
   name: 'product',
   initialState,
