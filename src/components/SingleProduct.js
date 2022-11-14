@@ -1,7 +1,10 @@
 // import { set } from 'immer/dist/internal';
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { addCart } from '../feature/cartSlice';
 function SingleProduct() {
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const { id } = useParams();
@@ -22,13 +25,17 @@ function SingleProduct() {
 
   console.log(data);
 
+  const addtocart = () => {
+    dispatch(addCart(data));
+  };
+
   const { image, title, description, price, category } = data;
   return (
     <>
       {loading && <div className="text-bold">loading...</div>}
       {data && (
         <div className="container columns-2 gap-4 mx-auto p-40">
-          <div className="aspect-square object-fit">
+          <div className="aspect-square object-fit clear-both">
             <img src={image} alt="" height={400} width={400} />
           </div>
           <div className="product__detail">
@@ -37,13 +44,15 @@ function SingleProduct() {
               {category}
             </span>
             <p className="font-normal text-base capitalize">{description}</p>
-            <p>
-              <strong className="font-extra text-3xl text-orange-400	my-3">
-                ${price}
-              </strong>
-            </p>
-            <div className="container">
-              <input type="number" defaultValue={1} />
+            <p className="font-extra text-3xl text-orange-400	my-6">${price}</p>
+            <div className="container flex justify-between">
+              <input type="number" defaultValue={1} className="border-2 p-1" />
+              <button
+                onClick={addtocart}
+                className="p-2 w-full bg-orange-400 text-white"
+              >
+                Add to Cart
+              </button>
             </div>
           </div>
         </div>
