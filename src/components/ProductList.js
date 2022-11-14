@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // import SingleProduct from './SingleProduct';
 function ProductList() {
   const { products } = useSelector((state) => state.product);
-  console.log(products);
+  // console.log(products);
   return (
     <>
       <div className="container grid md:grid-cols-4 mx-auto gap-8 p-10">

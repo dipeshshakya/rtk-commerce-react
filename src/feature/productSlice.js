@@ -22,13 +22,14 @@ export const deleteProduct = createAsyncThunk(
   }
 );
 
-export const singleProduct = createAsyncThunk(
-  'products/single',
-  async ({ id }) => {
-    await productServices.get(id);
-    return { id };
-  }
-);
+// export const singleProduct = createAsyncThunk('products/single', async (id) => {
+//   console.log(id);
+//   const res = await fetch('https://fakestoreapi.com/products/{id}').then(
+//     (data) => data.json()
+//   );
+//   console.log(res);
+//   return res;
+// });
 export const productSlice = createSlice({
   name: 'product',
   initialState,
