@@ -43,3 +43,4 @@ export const { addCart, incrementQty, decrementQty, removeItem } =
   cartSlice.actions;
 // Export the reducer, either as a default or named export
 export default cartSlice.reducer;
+// https://blog.openreplay.com/building-a-shopping-cart-in-react-with-redux-toolkit-and-redux-persist

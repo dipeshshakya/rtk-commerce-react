@@ -46,7 +46,12 @@ function SingleProduct() {
             <p className="font-normal text-base capitalize">{description}</p>
             <p className="font-extra text-3xl text-orange-400	my-6">${price}</p>
             <div className="container flex justify-between">
-              <input type="number" defaultValue={1} className="border-2 p-1" />
+              <input
+                type="text"
+                defaultValue={1}
+                className="border-2 p-1"
+                readonly
+              />
               <button
                 onClick={addtocart}
                 className="p-2 w-full bg-orange-400 text-white"

@@ -1,15 +1,15 @@
 import React from 'react';
-import ProductList from '../../components/ProductList';
+import SingleProduct from '../../components/SingleProduct';
 import MainLayout from '../../layout/MainLayout';
 
-function Home() {
+const ProductDetail = () => {
   return (
     <>
       <MainLayout>
-        <ProductList />
+        <SingleProduct />
       </MainLayout>
     </>
   );
-}
+};
 
-export default Home;
+export default ProductDetail;
