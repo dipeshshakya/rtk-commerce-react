@@ -1,11 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import CartItem from '../../components/CartItem';
+import Total from '../../components/Total';
 import MainLayout from '../../layout/MainLayout';
 
 const Cart = () => {
   const { cart } = useSelector((state) => state.cart);
-  console.log(cart);
+  // console.log(cart);
   return (
     <MainLayout>
       <div className="container mx-auto p-10">
@@ -34,6 +35,7 @@ const Cart = () => {
           </tbody>
         </table>
       </div>
+      <Total />
     </MainLayout>
   );
 };
