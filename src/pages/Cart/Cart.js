@@ -1,9 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import CartItem from '../../components/CartItem';
 import MainLayout from '../../layout/MainLayout';
 
 const Cart = () => {
-  const cart = useSelector((state) => state.cart);
+  const { cart } = useSelector((state) => state.cart);
   console.log(cart);
   return (
     <MainLayout>
@@ -12,17 +13,24 @@ const Cart = () => {
         <table className="table-fixed w-full mx-auto">
           <thead>
             <tr>
-              <th>Items</th>
+              <th></th>
+              <th></th>
+              <th>Product</th>
               <th>Quatity</th>
               <th>Price</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-              <td>Malcolm Lockyer</td>
-              <td>1961</td>
-            </tr>
+            {cart?.map((item) => (
+              <CartItem
+                key={item.id}
+                id={item.id}
+                image={item.image}
+                title={item.title}
+                price={item.price}
+                qty={item.qty}
+              />
+            ))}
           </tbody>
         </table>
       </div>

@@ -50,7 +50,7 @@ function SingleProduct() {
                 type="text"
                 defaultValue={1}
                 className="border-2 p-1"
-                readonly
+                readOnly
               />
               <button
                 onClick={addtocart}
